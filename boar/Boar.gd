@@ -1,6 +1,7 @@
 extends KinematicBody
 
 var player = null
+onready var anim = $"Scene Root/AnimationPlayer"
 
 func _ready():
 	pass # Replace with function body.

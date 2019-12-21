@@ -36,6 +36,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 4.95675, 0, 0 ), Vector3( 0, 0, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Scene Root/Flintlock:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -46.8887, 0, 0 ), Vector3( -46.8887, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"
@@ -168,7 +180,7 @@ anims/idle = SubResource( 3 )
 anims/walk = SubResource( 4 )
 
 [node name="Scene Root" parent="Camera/Rifle" instance=ExtResource( 3 )]
-transform = Transform( 0.572588, 0, 0, 0, 0.572588, 0, 0, 0, 0.572588, 0.153157, -0.56313, 0.0637728 )
+transform = Transform( 0.572588, 0, 0, 0, 0.572588, 0, 0, 0, 0.572588, 0.153157, -0.56313, 0.059638 )
 
 [node name="Flintlock" parent="Camera/Rifle/Scene Root" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0904643, 0, -1.542 )
