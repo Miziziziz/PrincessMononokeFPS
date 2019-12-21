@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://player/armandsword.png" type="Texture" id=1]
+[ext_resource path="res://player/armandsword_mask.png" type="Texture" id=2]
+[ext_resource path="res://player/displacement.png" type="Texture" id=3]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+render_mode vertex_lighting, cull_disabled;
+
+uniform sampler2D main_tx : hint_albedo;
+uniform sampler2D mask_tx : hint_albedo;
+uniform sampler2D noise_tx : hint_albedo;
+
+uniform float max_wobble = .8;
+
+void vertex() {
+	float wobble_mask = texture(mask_tx, UV).x;
+	vec3 wobble_amount = texture(noise_tx, UV + TIME * 0.2).xyz;
+	VERTEX += ((NORMAL * wobble_amount.x) + (-BINORMAL * 0.5 * wobble_amount.y)) * wobble_mask * max_wobble;
+}
+
+void fragment() {
+	ALBEDO = texture(main_tx, UV).xyz;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/max_wobble = 0.8
+shader_param/main_tx = ExtResource( 1 )
+shader_param/mask_tx = ExtResource( 2 )
+shader_param/noise_tx = ExtResource( 3 )

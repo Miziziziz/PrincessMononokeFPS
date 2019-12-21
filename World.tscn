@@ -1,0 +1,174 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://boar/Boar.tscn" type="PackedScene" id=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[node name="World" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="env" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="MeshInstance" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 3.31437, 0, 0, 0, 3.31437, 0, 0, 0, 3.31437, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 3.31437, 0, 0, 0, 3.31437, 0, 0, 0, 3.31437, 1, 0, -6 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 3.20825, 0, -0.831964, 0, 3.31437, 0, 0.831964, 0, 3.20825, 2.6375, 0, -11.4053 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 3.31437, 0, 0.00532949, 0, 3.31437, 0, -0.00532949, 0, 3.31437, 2.78355, 0, -17.0643 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 3.09949, 0, 1.17399, 0, 3.31437, 0, -1.17399, 0, 3.09949, 1.22545, 0, -22.6774 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 0.53822, 3.0524, 1.17399, -3.26402, 0.575535, 1.21594e-08, -0.203861, -1.15615, 3.09949, -1.88438, 2.95442, -20.9183 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 0.57553, 3.26399, 0.013356, -3.26402, 0.575535, 1.21594e-08, -0.00231922, -0.013153, 3.31435, -0.758487, 2.95442, -14.9103 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance7/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 0.519453, 2.94596, -1.42708, -3.26402, 0.575535, 1.21594e-08, 0.247809, 1.4054, 2.99141, -1.68481, 2.95442, -9.82674 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance8/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( 0.572979, 3.24952, -0.312023, -3.26402, 0.575535, 1.21594e-08, 0.0541823, 0.307283, 3.29965, -2.76303, 2.95442, -4.7196 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance9/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( -0.57548, -3.26371, -0.045795, -3.26402, 0.575535, 1.21594e-08, 0.00795222, 0.0450992, -3.31406, 4.57383, 2.95442, -5.84187 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance10/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( -0.518112, -2.93836, 1.44315, -3.26402, 0.575535, 1.21594e-08, -0.2506, -1.42122, -2.98369, 6.20786, 2.95442, -11.0033 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance11/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( -0.574495, -3.25812, -0.199173, -3.26402, 0.575535, 1.21594e-08, 0.034586, 0.196147, -3.30838, 6.87735, 2.95442, -16.0489 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance12/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance13" type="MeshInstance" parent="env"]
+editor/display_folded = true
+transform = Transform( -0.516186, -2.92744, -1.46585, -3.26402, 0.575535, 1.21594e-08, 0.254543, 1.44358, -2.9726, 5.8213, 2.95442, -21.0521 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="env/MeshInstance13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="env/MeshInstance13/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Boar" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -9 )
+
+[node name="Boar2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -12 )
+
+[node name="Boar3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -15 )
+
+[node name="Boar4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -18 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.360226, 0.394778, -0.845214, 0.154781, 0.918777, 0.36317, 0.919935, 0, -0.392072, 0, 0, 0 )

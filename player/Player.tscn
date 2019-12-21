@@ -1,0 +1,199 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://player/Weapon.gd" type="Script" id=2]
+[ext_resource path="res://player/rifle.glb" type="PackedScene" id=3]
+[ext_resource path="res://player/armandsword.glb" type="PackedScene" id=4]
+[ext_resource path="res://player/arm_mat.tres" type="Material" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.5
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.153157, -0.56313, 0.0637728 ), Vector3( 0.153, -0.563, 0.640349 ), Vector3( 0.153157, -0.56313, 0.0637728 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scene Root:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 4.95675, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.153157, -0.56313, 0.059638 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.153157, -0.56313, 0.059638 ), Vector3( 0.153157, -0.56313, 0.059638 ), Vector3( 0.153157, -0.56313, 0.20369 ), Vector3( 0.153157, -0.56313, 0.059638 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.457246, -0.37555, -0.921074 ), Vector3( 0.512298, -0.0845597, -0.340756 ), Vector3( 0.678059, -1.07542, -0.86398 ), Vector3( 0.457246, -0.37555, -0.921074 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scene Root:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -81.2862, 0 ), Vector3( 3.77511, -82.1407, -48.3154 ), Vector3( -5.75418, -44.4135, 72.6376 ), Vector3( 0, -81.2862, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.457246, -0.37555, -0.92917 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Scene Root:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.457246, -0.37555, -0.92917 ), Vector3( 0.457246, -0.37555, -0.92917 ), Vector3( 0.457246, -0.37555, -0.860144 ), Vector3( 0.457246, -0.37555, -0.92917 ) ]
+}
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+current = true
+
+[node name="Rifle" type="Spatial" parent="Camera"]
+script = ExtResource( 2 )
+
+[node name="RayCast" type="RayCast" parent="Camera/Rifle"]
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/Rifle"]
+autoplay = "walk"
+anims/attack = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/walk = SubResource( 4 )
+
+[node name="Scene Root" parent="Camera/Rifle" instance=ExtResource( 3 )]
+transform = Transform( 0.572588, 0, 0, 0, 0.572588, 0, 0, 0, 0.572588, 0.153157, -0.56313, 0.0637728 )
+
+[node name="Flintlock" parent="Camera/Rifle/Scene Root" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0904643, 0, -1.542 )
+
+[node name="Sword" type="Spatial" parent="Camera"]
+script = ExtResource( 2 )
+explode_on_kill = true
+custom_call_attack = true
+
+[node name="RayCast" type="RayCast" parent="Camera/Sword"]
+enabled = true
+cast_to = Vector3( 0, 0, -4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/Sword"]
+anims/attack = SubResource( 5 )
+anims/idle = SubResource( 6 )
+anims/walk = SubResource( 7 )
+
+[node name="Scene Root" parent="Camera/Sword" instance=ExtResource( 4 )]
+transform = Transform( 0.0587224, 0, -0.383134, 0, 0.387608, 0, 0.383134, 0, 0.0587224, 0.457246, -0.37555, -0.921074 )
+
+[node name="Cube" parent="Camera/Sword/Scene Root" index="0"]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, -1.17088, 0 )
+material/0 = ExtResource( 5 )
+
+[editable path="Camera/Rifle/Scene Root"]
+
+[editable path="Camera/Sword/Scene Root"]
