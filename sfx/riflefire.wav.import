@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/riflefire.wav-7a408778f9b788fe79a04be37a7a425b.sample"
+
+[deps]
+
+source_file="res://sfx/riflefire.wav"
+dest_files=[ "res://.import/riflefire.wav-7a408778f9b788fe79a04be37a7a425b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

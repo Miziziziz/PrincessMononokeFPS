@@ -26,6 +26,8 @@ var lean_rate_out = 55.0
 var lean_rate_in = 15.0
 
 func _ready():
+	for boar in get_tree().get_nodes_in_group("boars"):
+		boar.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	cur_weapon_is_1 = false
 	switch_weapons()

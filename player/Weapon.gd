@@ -23,7 +23,3 @@ func _process(delta):
 		anim.play("walk", 0.2)
 	elif not_moving and (!anim.is_playing() or anim.current_animation == "walk"):
 		anim.play("idle", 0.2)
-	
-	
-		
-	

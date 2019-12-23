@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Gib.tscn" type="PackedScene" id=1]
+
+[node name="Gibs" type="Spatial"]
+
+[node name="Gib" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.708034, 0.674632, -0.208708, -0.129198, 0.414308, 0.90092, 0.694259, -0.610918, 0.380505, 0, 0.537631, 0 )
+
+[node name="Gib2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.499776, -0.693671, 0.518695, 0, 0.598848, 0.800862, -0.866155, 0.400252, -0.29929, 0, 0.537631, 0 )
+
+[node name="Gib3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.0589656, -0.9965, 0.0592555, -0.313073, 0.0748242, 0.946777, -0.947896, 0.0372759, -0.31639, 0, 0.537631, 0 )
+gravity_scale = 3.0

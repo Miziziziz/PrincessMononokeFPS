@@ -6,7 +6,7 @@
 
 [sub_resource type="Shader" id=1]
 code = "shader_type spatial;
-render_mode vertex_lighting, cull_disabled;
+render_mode vertex_lighting;
 
 uniform sampler2D main_tx : hint_albedo;
 uniform sampler2D mask_tx : hint_albedo;

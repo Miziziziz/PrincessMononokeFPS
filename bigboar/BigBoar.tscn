@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://bigboar/BigBoar.gd" type="Script" id=1]
+[ext_resource path="res://bigboar/bigboar.glb" type="PackedScene" id=2]
+[ext_resource path="res://bigboar/bigboar.tres" type="Material" id=3]
+[ext_resource path="res://bigboar/idle.anim" type="Animation" id=4]
+[ext_resource path="res://bigboar/roar.anim" type="Animation" id=5]
+[ext_resource path="res://bigboar/walk.anim" type="Animation" id=6]
+[ext_resource path="res://sfx/boarscream.wav" type="AudioStream" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "entrance"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("Scene Root/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "walk", -1, 1.0, false ],
+"method": "play"
+}, {
+"args": [ "roar", -1, 1.0, false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Scene Root:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 2 ), Vector3( 0, 0, 8 ), Vector3( 0, 0, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="BigBoar" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Scene Root" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.6189, 0, 0, 0, 1.6189, 0, 0, 0, 1.6189, 0, 0, 2 )
+
+[node name="Boar" parent="Scene Root/Armature" index="0"]
+transform = Transform( 1.81257, 0, 0, 0, 1.81257, 0, 0, 0, 1.81257, 0, 0, 0 )
+material/0 = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="Scene Root" index="6"]
+autoplay = "idle"
+anims/idle = ExtResource( 4 )
+anims/roar = ExtResource( 5 )
+anims/walk = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/entrance = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -2.391
+
+[editable path="Scene Root"]

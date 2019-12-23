@@ -1,28 +1,31 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://boar/Boar.gd" type="Script" id=1]
 [ext_resource path="res://boar/boar.glb" type="PackedScene" id=2]
 [ext_resource path="res://boar/boar.material" type="Material" id=3]
+[ext_resource path="res://Blood.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.579857
+radius = 1.09595
 height = 1.45979
 
 [node name="Boar" type="KinematicBody" groups=[
 "boars",
 ]]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource( 1 )
-
-[node name="Scene Root" parent="." instance=ExtResource( 2 )]
-
-[node name="Boar" parent="Scene Root/Armature" index="0"]
-material/0 = ExtResource( 3 )
-
-[node name="AnimationPlayer" parent="Scene Root" index="4"]
-autoplay = "run"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985621, 0.0344607 )
 shape = SubResource( 1 )
+
+[node name="Scene Root" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.4616, 0, 0, 0, 1.4616, 0, 0, 0, 1.4616, 0, 0, 0 )
+
+[node name="Boar" parent="Scene Root/Armature" index="0"]
+material/0 = ExtResource( 3 )
+
+[node name="Blood" parent="." instance=ExtResource( 4 )]
 
 [editable path="Scene Root"]
